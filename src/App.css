@@ -1,14 +1,23 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+*
+
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #2b2d2f;
+  body {
+  background: linear-gradient(135deg, #005ca8, #35107b);
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
 }
+}
+  body {
+  font-family: 'Oswald', sans-serif;
+}
+
 
 /* AUTH PAGES */
 
@@ -103,33 +112,55 @@ body {
 .create-team-page,
 .queue-page {
   min-height: 100vh;
-  background: radial-gradient(circle, #000000 0%, #111111 45%, #2b2d2f 100%);
+  background: linear-gradient(
+    135deg,
+    #005ca8 0%,
+    #1f4eb8 40%,
+    rgb(53, 16, 122) 100%
+  );
   padding: 30px;
 }
 
 .home-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 35px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .home-header h1 {
-  font-size: 2.8rem;
-  color: #ffffff;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #8f17ff;
+  text-shadow:
+    0 0 10px rgba(168, 85, 247, 0.7),
+    0 0 25px rgba(124, 58, 237, 0.6),
+    0 0 40px rgba(91, 33, 182, 0.4);
+  margin-bottom: 8px;
 }
 
 .home-header p {
-  color: #d1d5db;
-  margin-top: 5px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.court-section h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+}
+
+.court-card h3 {
+  color: white;
 }
 
 .signout-button {
   padding: 12px 18px;
   background: linear-gradient(135deg, #005ca8, #35107b);
   color: #ffffff;
-  border: none;
-  border-radius: 8px;
+  border: 3px solid white;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -592,8 +623,8 @@ body {
   padding: 13px 18px;
   background: linear-gradient(135deg, #005ca8, #35107b);
   color: #ffffff;
-  border: none;
-  border-radius: 8px;
+  border: 3px solid white;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -617,8 +648,8 @@ body {
   padding: 8px 12px;
   background: linear-gradient(135deg, #005ca8, #35107b);
   color: #ffffff;
-  border: none;
-  border-radius: 8px;
+  border: 3px solid white;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: bold;
 }
@@ -686,13 +717,14 @@ select:focus {
 }
 
 .queue-action-button {
-  padding: 12px 22px;
   background: linear-gradient(135deg, #005ca8, #35107b);
   color: white;
-  border: none;
-  border-radius: 10px;
-  font-weight: 700;
-  cursor: pointer;
+
+  border: 3px solid white;
+
+  border-radius: 12px;
+  padding: 12px 24px;
+
   transition: all 0.2s ease;
 }
 
@@ -716,4 +748,38 @@ select:focus {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 36px;
+}
+.admin-card h2,
+.queue-status-card h2,
+.queue-list-card h2,
+.playing-team-box h3,
+.court-section h2,
+.court-card h2 {
+  color: white !important;
+}
+
+.home-header h1 {
+  color: #a855f7;
+  -webkit-text-stroke: 1px white;
+}
+
+.admin-card h2,
+.queue-status-card h2,
+.queue-list-card h2,
+.court-section h2,
+.court-card h2 {
+  color: white;
+}
+
+.queue-action-button,
+.signout-button,
+.undo-button,
+.admin-form button {
+  background: linear-gradient(135deg, #005ca8, #35107b);
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
 }

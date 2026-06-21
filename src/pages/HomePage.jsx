@@ -68,8 +68,7 @@ function HomePage({ teams, setSelectedCourt, setAppPage }) {
     <div className="home-page">
       <header className="home-header">
         <div>
-          <h1>ON2 Admin 🏐</h1>
-          <p>Host-controlled court queue.</p>
+          <h1>ON2 Volleyball🏐</h1>
         </div>
       </header>
 

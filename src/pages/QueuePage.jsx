@@ -90,8 +90,7 @@ function QueuePage({ selectedCourt, teams, setTeams, setAppPage }) {
       <div className="queue-page">
         <header className="home-header">
           <div>
-            <h1>Court 3/4 Queue</h1>
-            <p>Courts 3 and 4 share one queue.</p>
+            <h1>Court 3 & 4 Queue</h1>
           </div>
 
           <button className="signout-button" onClick={() => setAppPage("home")}>
@@ -100,7 +99,7 @@ function QueuePage({ selectedCourt, teams, setTeams, setAppPage }) {
         </header>
 
         <section className="admin-card">
-          <h2>Add Name To Court 3/4 Queue</h2>
+          <h2>Add Name To Court Queue</h2>
 
           <div className="admin-form">
             <input
@@ -288,7 +287,6 @@ function QueuePage({ selectedCourt, teams, setTeams, setAppPage }) {
       <header className="home-header">
         <div>
           <h1>{selectedCourt} Queue</h1>
-          <p>Host controls who is added and removed.</p>
         </div>
 
         <button className="signout-button" onClick={() => setAppPage("home")}>
