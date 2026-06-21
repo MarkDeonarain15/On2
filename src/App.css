@@ -409,9 +409,8 @@ body {
 
 .queue-status-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  margin-bottom: 24px;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 24px;
 }
 
 .queue-status-card {
@@ -478,6 +477,51 @@ body {
   margin-bottom: 4px;
 }
 
+.playing-teams-wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.playing-team-box {
+  flex: 1;
+  background: #111111;
+  border: 1px solid #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.playing-team-box h3 {
+  margin-bottom: 10px;
+}
+
+.playing-team-box p {
+  margin-bottom: 12px;
+}
+
+.playing-team-box button {
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #005ca8, #35107b);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.playing-team-box button:hover {
+  background: linear-gradient(135deg, #35107b, #005ca8);
+}
+
+.versus-text {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
 @media (max-width: 900px) {
   .home-header {
     flex-direction: column;
@@ -501,4 +545,175 @@ body {
   .queue-position {
     min-width: auto;
   }
+
+  .playing-teams-wrapper {
+    flex-direction: column;
+  }
+
+  .versus-text {
+    justify-content: center;
+  }
+}
+.admin-card {
+  background: #050505;
+  border: 2px solid #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 20px rgba(0, 92, 168, 0.25);
+}
+
+.admin-card h2 {
+  margin-bottom: 14px;
+}
+
+.admin-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admin-form input {
+  flex: 1;
+  min-width: 240px;
+  padding: 13px;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+  background: #111111;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.admin-form input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-form button {
+  padding: 13px 18px;
+  background: linear-gradient(135deg, #005ca8, #35107b);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.admin-form button:hover {
+  background: linear-gradient(135deg, #35107b, #005ca8);
+}
+.court-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.court-card-header h2 {
+  margin-bottom: 0;
+}
+
+.undo-button {
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #005ca8, #35107b);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.undo-button:hover {
+  background: linear-gradient(135deg, #35107b, #005ca8);
+}
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(0, 92, 168, 0.55);
+}
+
+button:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
+}
+
+.court-card,
+.queue-status-card,
+.queue-list-card,
+.admin-card,
+.playing-team-box,
+.queue-team-row {
+  transition: all 0.25s ease;
+}
+
+.court-card:hover,
+.playing-team-box:hover,
+.queue-team-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(53, 16, 123, 0.45);
+}
+
+.queue-page,
+.home-page {
+  animation: pageFadeIn 0.25s ease-in;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input,
+select {
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #005ca8;
+  box-shadow: 0 0 10px rgba(0, 92, 168, 0.7);
+}
+
+.queue-action-button {
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #005ca8, #35107b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.queue-action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(0, 92, 168, 0.5);
+}
+
+.queue-action-button:active {
+  transform: scale(0.97);
+}
+.winner-button {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.playing-team-box {
+  min-width: 0;
+  width: 100%;
+}
+.queue-status-grid-equal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
 }
