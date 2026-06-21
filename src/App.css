@@ -809,3 +809,85 @@ select:focus {
   margin-top: 4px;
   margin-bottom: 4px;
 }
+@media (max-width: 768px) {
+  .home-page,
+  .queue-page,
+  .create-team-page {
+    padding: 16px;
+  }
+
+  .home-header h1 {
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+
+  .home-header p {
+    font-size: 1rem;
+  }
+
+  .court-grid,
+  .queue-status-grid,
+  .queue-status-grid-equal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .court-section,
+  .admin-card,
+  .queue-status-card,
+  .queue-list-card,
+  .court-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .admin-form {
+    flex-direction: column;
+  }
+
+  .admin-form input,
+  .admin-form button {
+    width: 100%;
+  }
+
+  .playing-teams-wrapper {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .versus-text {
+    justify-content: center;
+    font-size: 1.6rem;
+  }
+
+  .playing-team-box {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .queue-team-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .queue-action-button,
+  .winner-button,
+  .signout-button,
+  .undo-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .court-card h2,
+  .queue-status-card h2,
+  .queue-list-card h2,
+  .admin-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .playing-team-box h3,
+  .queue-team-info h3 {
+    font-size: 1.6rem;
+  }
+}
