@@ -783,3 +783,19 @@ select:focus {
 
   transition: all 0.2s ease;
 }
+
+.queue-status-card h2,
+.queue-status-card h3,
+.queue-status-card p,
+.queue-list-card h2,
+.queue-list-card h3,
+.queue-list-card p,
+.queue-team-info h3,
+.queue-team-info p {
+  color: white !important;
+  background: transparent !important;
+}
+
+.queue-position {
+  color: white !important;
+}
