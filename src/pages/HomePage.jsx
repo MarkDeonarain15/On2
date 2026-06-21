@@ -8,9 +8,7 @@ function HomePage({ teams, setSelectedCourt, setAppPage }) {
   const getNowPlaying = (courtName) => {
     const courtTeams = getCourtTeams(courtName);
 
-    if (courtTeams.length === 0) {
-      return "No one playing";
-    }
+    if (courtTeams.length === 0) return "No one playing";
 
     if (courtName === "Court 3/4") {
       const court3A = courtTeams[0];
@@ -42,21 +40,14 @@ function HomePage({ teams, setSelectedCourt, setAppPage }) {
     return `${courtTeams[0].name} vs ${courtTeams[1].name}`;
   };
 
-  const getWaitingTeamsCount = (courtName) => {
+  const getQueueTeams = (courtName) => {
     const courtTeams = getCourtTeams(courtName);
 
     if (courtName === "Court 3/4") {
-      return courtTeams.length > 4 ? courtTeams.length - 4 : 0;
+      return courtTeams.slice(4);
     }
 
-    return courtTeams.length > 2 ? courtTeams.length - 2 : 0;
-  };
-
-  const getQueueText = (courtName) => {
-    const waitingCount = getWaitingTeamsCount(courtName);
-    const teamWord = waitingCount === 1 ? "team" : "teams";
-
-    return `${waitingCount} ${teamWord} waiting`;
+    return courtTeams.slice(2);
   };
 
   const handleViewQueue = (courtName) => {
@@ -68,7 +59,7 @@ function HomePage({ teams, setSelectedCourt, setAppPage }) {
     <div className="home-page">
       <header className="home-header">
         <div>
-          <h1>ON2 Volleyball🏐</h1>
+          <h1>ON2 Volleyball 🏐</h1>
         </div>
       </header>
 
@@ -76,23 +67,39 @@ function HomePage({ teams, setSelectedCourt, setAppPage }) {
         <h2>Courts</h2>
 
         <div className="court-grid">
-          {courts.map((courtName) => (
-            <div className="court-card" key={courtName}>
-              <h2>{courtName}</h2>
+          {courts.map((courtName) => {
+            const queueTeams = getQueueTeams(courtName);
 
-              <p>
-                <strong>Now Playing:</strong> {getNowPlaying(courtName)}
-              </p>
+            return (
+              <div className="court-card" key={courtName}>
+                <h2>{courtName}</h2>
 
-              <p>
-                <strong>Queue:</strong> {getQueueText(courtName)}
-              </p>
+                <p>
+                  <strong>Now Playing:</strong> {getNowPlaying(courtName)}
+                </p>
 
-              <button onClick={() => handleViewQueue(courtName)}>
-                View Queue
-              </button>
-            </div>
-          ))}
+                <div className="court-queue-preview">
+                  <strong>Queue:</strong>
+
+                  {queueTeams.length === 0 ? (
+                    <p>Empty</p>
+                  ) : (
+                    queueTeams.slice(0, 4).map((team) => (
+                      <p key={team.id}>{team.name}</p>
+                    ))
+                  )}
+
+                  {queueTeams.length > 4 && (
+                    <p>+{queueTeams.length - 4} more</p>
+                  )}
+                </div>
+
+                <button onClick={() => handleViewQueue(courtName)}>
+                  View Queue
+                </button>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>

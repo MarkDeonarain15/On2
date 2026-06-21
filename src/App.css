@@ -799,3 +799,13 @@ select:focus {
 .queue-position {
   color: white !important;
 }
+.court-queue-preview {
+  margin: 12px 0;
+  color: white;
+}
+
+.court-queue-preview p {
+  color: white;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
